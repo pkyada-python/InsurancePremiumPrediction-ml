@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 
 st.title("Insurance Premium Prediction")
 
-with open('insurance_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+with open('./Model/insurance_model.pkl', 'rb') as file:
+    model = joblib.load(file)
   
 if model is not None:
     col1, col2 = st.columns(2)
